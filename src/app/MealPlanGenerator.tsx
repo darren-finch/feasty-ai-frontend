@@ -1,17 +1,74 @@
 "use client"
 import { useState } from "react"
+import MealPlanComponent from "./MealPlanComponent"
+
+interface MealPlan {
+	totalCost: number
+	totalPrepTime: number
+	totalCalories: number
+	totalCarbs: number
+	totalFats: number
+	totalProtein: number
+
+	meals: Meal[]
+}
+
+interface Meal {
+	name: string
+	cost: number
+	prepTime: number
+
+	foods: Food[]
+}
+
+interface Food {
+	name: string
+	calories: number
+	carbs: number
+	fats: number
+	protein: number
+}
+
+// Sample meal plan data
+const testMealPlan: MealPlan = {
+	totalCost: 34,
+	totalPrepTime: 20,
+	totalCalories: 2100,
+	totalCarbs: 150,
+	totalFats: 80,
+	totalProtein: 180,
+	meals: [
+		{
+			name: "Greek Yogurt and Berries",
+			cost: 5,
+			prepTime: 5,
+			foods: [
+				{ name: "Greek Yogurt", calories: 100, carbs: 6, fats: 0, protein: 20 },
+				{ name: "Mixed Berries", calories: 70, carbs: 18, fats: 0, protein: 1 },
+			],
+		},
+		{
+			name: "Turkey and Avocado Wrap",
+			cost: 8,
+			prepTime: 5,
+			foods: [
+				{ name: "Whole Wheat Tortilla", calories: 120, carbs: 20, fats: 3, protein: 4 },
+				{ name: "Sliced Turkey Breast", calories: 120, carbs: 0, fats: 1, protein: 26 },
+				{ name: "Avocado", calories: 120, carbs: 6, fats: 11, protein: 1 },
+			],
+		},
+	],
+}
 
 const MealPlanGenerator = () => {
 	// State to hold the form values
-	const [budget, setBudget] = useState("")
-	const [calories, setCalories] = useState("")
-	const [carbs, setCarbs] = useState("")
-	const [fats, setFats] = useState("")
-	const [protein, setProtein] = useState("")
-	const [meals, setMeals] = useState("")
-	const [mealPlan, setMealPlan] = useState(
-		`{"budget":"35","calories":"2500","carbs":"187.5","fats":"83.33","protein":"250","meals":"5"}`
-	) // For storing the generated meal plan
+	const [budget, setBudget] = useState("50")
+	const [calories, setCalories] = useState("2500")
+	const [carbs, setCarbs] = useState("187.5")
+	const [fats, setFats] = useState("83.33")
+	const [protein, setProtein] = useState("250")
+	const [meals, setMeals] = useState("5")
+	const [mealPlan, setMealPlan] = useState<MealPlan>() // For storing the generated meal plan
 	const [loading, setLoading] = useState(false) // For loading state
 
 	// Function to handle form submission and fetch meal plan
@@ -43,11 +100,13 @@ const MealPlanGenerator = () => {
 			if (data.mealPlan) {
 				setMealPlan(data.mealPlan) // Set the generated meal plan
 			} else {
-				setMealPlan("Error generating meal plan.")
+				alert("Error generating meal plan.")
+				// setMealPlan("Error generating meal plan.")
 			}
 		} catch (error) {
 			console.error("Error generating meal plan:", error)
-			setMealPlan("Error generating meal plan.")
+			alert("Error generating meal plan.")
+			// setMealPlan("Error generating meal plan.")
 		}
 
 		setLoading(false) // Stop loading
@@ -141,7 +200,7 @@ const MealPlanGenerator = () => {
 				{mealPlan && (
 					<div className="mt-6 bg-gray-50 p-4 rounded-lg shadow-inner">
 						<h2 className="text-xl font-semibold text-gray-800 mb-4">Generated Meal Plan:</h2>
-						<p className="w-100 text-sm text-gray-700 break-all">{JSON.stringify(mealPlan)}</p>
+						<MealPlanComponent mealPlan={mealPlan} />
 					</div>
 				)}
 			</div>

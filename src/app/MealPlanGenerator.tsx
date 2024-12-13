@@ -1,75 +1,32 @@
 "use client"
 import { useState } from "react"
 import MealPlanComponent from "./MealPlanComponent"
-
-interface MealPlan {
-	totalCost: number
-	totalPrepTime: number
-	totalCalories: number
-	totalCarbs: number
-	totalFats: number
-	totalProtein: number
-
-	meals: Meal[]
-}
-
-interface Meal {
-	name: string
-	cost: number
-	prepTime: number
-
-	foods: Food[]
-}
-
-interface Food {
-	name: string
-	calories: number
-	carbs: number
-	fats: number
-	protein: number
-}
-
-// Sample meal plan data
-const testMealPlan: MealPlan = {
-	totalCost: 34,
-	totalPrepTime: 20,
-	totalCalories: 2100,
-	totalCarbs: 150,
-	totalFats: 80,
-	totalProtein: 180,
-	meals: [
-		{
-			name: "Greek Yogurt and Berries",
-			cost: 5,
-			prepTime: 5,
-			foods: [
-				{ name: "Greek Yogurt", calories: 100, carbs: 6, fats: 0, protein: 20 },
-				{ name: "Mixed Berries", calories: 70, carbs: 18, fats: 0, protein: 1 },
-			],
-		},
-		{
-			name: "Turkey and Avocado Wrap",
-			cost: 8,
-			prepTime: 5,
-			foods: [
-				{ name: "Whole Wheat Tortilla", calories: 120, carbs: 20, fats: 3, protein: 4 },
-				{ name: "Sliced Turkey Breast", calories: 120, carbs: 0, fats: 1, protein: 26 },
-				{ name: "Avocado", calories: 120, carbs: 6, fats: 11, protein: 1 },
-			],
-		},
-	],
-}
+import { MealPlan } from "./MealPlan"
 
 const MealPlanGenerator = () => {
 	// State to hold the form values
 	const [budget, setBudget] = useState("50")
 	const [calories, setCalories] = useState("2500")
-	const [carbs, setCarbs] = useState("187.5")
-	const [fats, setFats] = useState("83.33")
-	const [protein, setProtein] = useState("250")
+	const [carbs, setCarbs] = useState("30")
+	const [fats, setFats] = useState("30")
+	const [protein, setProtein] = useState("40")
 	const [meals, setMeals] = useState("5")
 	const [mealPlan, setMealPlan] = useState<MealPlan>() // For storing the generated meal plan
 	const [loading, setLoading] = useState(false) // For loading state
+
+	const updateMacroBreakdownPercentages = (carbsPC: any, fatsPC: any, proteinPC: any) => {
+		const carbsPCNum = parseInt(carbsPC.toString())
+		const fatsPCNum = parseInt(fatsPC.toString())
+		const proteinPCNum = parseInt(proteinPC.toString())
+
+		if (carbsPC + fatsPC + proteinPC <= 100) {
+			setCarbs(carbsPCNum.toString())
+			setFats(fatsPCNum.toString())
+			setProtein(proteinPCNum.toString())
+		} else {
+			alert("You screwed it up")
+		}
+	}
 
 	// Function to handle form submission and fetch meal plan
 	const generateMealPlan = async (e: any) => {
@@ -140,38 +97,29 @@ const MealPlanGenerator = () => {
 					</div>
 
 					<div className="flex flex-col">
-						<label className="text-sm font-semibold text-gray-700 mb-1">
-							Total Daily Carbohydrates (grams)
-						</label>
+						<label className="text-sm font-semibold text-gray-700 mb-1">Macro Breakdown</label>
 						<input
 							type="number"
 							value={carbs}
-							onChange={(e) => setCarbs(e.target.value)}
+							onChange={(e) => updateMacroBreakdownPercentages(e.target.value, fats, protein)}
 							className="border border-gray-300 text-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+							placeholder="Enter carbs % (0-100)"
 							required
 						/>
-					</div>
-
-					<div className="flex flex-col">
-						<label className="text-sm font-semibold text-gray-700 mb-1">Total Daily Fats (grams)</label>
 						<input
 							type="number"
 							value={fats}
-							onChange={(e) => setFats(e.target.value)}
+							onChange={(e) => updateMacroBreakdownPercentages(carbs, e.target.value, protein)}
 							className="border border-gray-300 text-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+							placeholder="Enter fats % (0-100)"
 							required
 						/>
-					</div>
-
-					<div className="flex flex-col">
-						<label className="text-sm font-semibold text-gray-700 text-gray-700 mb-1">
-							Total Daily Protein (grams)
-						</label>
 						<input
 							type="number"
 							value={protein}
-							onChange={(e) => setProtein(e.target.value)}
+							onChange={(e) => updateMacroBreakdownPercentages(carbs, fats, e.target.value)}
 							className="border border-gray-300 text-gray-700 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none"
+							placeholder="Enter protein % (0-100)"
 							required
 						/>
 					</div>

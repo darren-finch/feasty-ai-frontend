@@ -2,7 +2,10 @@ import { Food } from "./Food"
 
 export interface Meal {
 	name: string
-	cost: number
-	prepTime: number
+	totalCalories: number
+	totalCarbs: number
+	totalFats: number
+	totalProtein: number
+
 	foods: Food[]
 }

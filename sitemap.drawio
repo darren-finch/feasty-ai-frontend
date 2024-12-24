@@ -1,0 +1,101 @@
+<mxfile host="65bd71144e">
+    <diagram id="QqHizs1tEkLyN8dlbcye" name="Page-1">
+        <mxGraphModel dx="657" dy="1419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="9" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="8" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="edgeStyle=none;html=1;" parent="1" source="2" target="20" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Meal Plan&lt;br&gt;&lt;br&gt;Desc: Is the place where the AI lets the user generate a new meal plan if one does not exist, otherwise, the user will be viewing the last generated meal plan. If they want to change this meal plan, they can either change it by inputting custom data, or they can select which meals they want to keep and regenerate the meals they don't want to keep with AI. If updates have been made to the macro goals through the settings page since the meal plan was created, an alert will appear to get the user to regenerate.&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Add Meal&lt;br&gt;- Remove Meal&lt;br&gt;- See Cooking Instructions (for a meal)&lt;br&gt;- Add Food To Meal&lt;br&gt;- Remove Food From Meal&lt;br&gt;- Edit Food Serving Size&lt;br&gt;- See Grocery List&lt;br&gt;- Generate New Meal Plan (This will only show when there are no meals in the current meal plan.&amp;nbsp;Creates all new meals to suite macro requirements.)&lt;br&gt;- Regenerate Meal Plan (this will show when there are already meals in the meal plan. There will be an option to keep certain meals and only replace the other ones. Probably just a checklist type thing.)&lt;br&gt;- Settings&lt;br&gt;- Submit Feedback" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="425" y="480" width="195" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="Note: In Future, we will want to add multiple meal plans for pro users, which will make the &quot;Meal Plan&quot; screen into &quot;Meal Plans&quot; screen" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="250" y="390" width="200" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Select Foods Pop Up Screen&lt;br&gt;&lt;br&gt;Desc: Will be where user can find non-AI generated foods (instead, it's the Foods API)&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Search Food&lt;br&gt;- Select Food" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="450" y="1150" width="130" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="Settings&lt;br&gt;&lt;br&gt;Desc: Allows changing user info (weight, height, gender, age), dietary goals, meal plan macro percentage distribution, calories (in case user does not like recommended calories for their goals and body type), and/or cancel subscripion.&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Change user info&lt;br&gt;- Change dietary goal&lt;br&gt;- Create custom calorie intake&lt;br&gt;- Change meal plan macro percentage&lt;br&gt;- Upgrade/Cancel subscription" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="820" y="580" width="150" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;startArrow=none;" parent="1" source="41" target="27" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="760" y="-210" as="sourcePoint"/>
+                        <mxPoint x="760" y="-140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="12" value="New App User" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="717.5" y="-430" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="27" target="28" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="655" y="-10" as="sourcePoint"/>
+                        <mxPoint x="650" y="60" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="18" value="" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="28" target="29" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="670" y="370" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="20" value="Grocery List Screen&lt;br&gt;&lt;br&gt;Desc: Is the place where the AI generates a grocery list for the meal plan if one hasn't been generated, or displays already generated grocery list. If updates have been made to the meal plan since the grocery list was created, an alert will appear to get the user to regenerate.&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Back to Meal Plan Screen&lt;br&gt;- Generate grocery list (generates grocery list from scratch)&lt;br&gt;- Regenerate grocery list (generates grocery list from scratch but only shows when a grocery list has been previously generated" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="515" width="130" height="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;See Grocery List Interaction&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="710" width="100" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Add Food To Meal&lt;br&gt;Interaction&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="520" y="1092.5" width="100" height="37.5" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Settings Interaction&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="670" y="700" width="100" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="Login/Signup Screen/Flow&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Sign Up&lt;br&gt;- Log In" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="722.5" y="-140" width="75" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Intro Screen&lt;br&gt;&lt;br&gt;Desc: A simple description of the value of the app and a process to collect all user information (weight, height, gender, goals, etc)/permissions&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Enter age, height, weight, gender, activity level in form&lt;br&gt;- (Continue once user info form is complete. Range of caloric intakes will be shown)&lt;br&gt;- Once the range of needed caloric intakes are known for the different possible fitness goals, then allow the user to select which fitness goal they're interested in&lt;br&gt;- After this, the user is prompted to continue&lt;br&gt;- When the user continues, they are lead to a pricing screen. It may be a good idea to preview the kind of result they may get." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="10" width="300" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" style="edgeStyle=none;html=1;fontSize=10;entryX=1;entryY=0;entryDx=0;entryDy=0;" parent="1" source="29" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="630" y="450" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="29" value="Pricing Screen/Stripe Payment Screen&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Select payment plan&lt;br&gt;- Pay with credit card" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="610" y="310" width="300" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Feedback&lt;br&gt;&lt;br&gt;Desc: Allows user to leave feedback about the app delivered directly to my email.&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Create and submit feedback (simple text area and submit button form)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="960" width="150" height="280" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="" style="endArrow=classic;html=1;fontSize=10;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="2" target="36" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="670" y="970" as="sourcePoint"/>
+                        <mxPoint x="750" y="1100" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="39" value="&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: left; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(42, 37, 47); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Submit Feedback Interaction&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="650" y="1010" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endArrow=none;" edge="1" parent="1" source="12" target="41">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="757.5" y="-400" as="sourcePoint"/>
+                        <mxPoint x="760" y="-140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="41" value="Welcome Screen&lt;br&gt;&lt;br&gt;Interactions:&lt;br&gt;- Continue" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="-330" width="75" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 18px;&quot;&gt;Global Interactions&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font size=&quot;3&quot;&gt;&lt;br&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Go to Meal Plan screen&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Go to Grocery List screen&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Go to Settings&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font size=&quot;3&quot;&gt;- Logout&lt;/font&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="270" y="120" width="210" height="180" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

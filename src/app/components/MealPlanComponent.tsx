@@ -1,5 +1,5 @@
 import React from "react"
-import { MealPlan } from "./MealPlan"
+import { MealPlan } from "../models/MealPlan"
 
 interface MealPlanProps {
 	mealPlan: MealPlan
@@ -26,11 +26,11 @@ const MealPlanComponent: React.FC<MealPlanProps> = ({ mealPlan }) => {
 					<ul className="list-disc pl-5 space-y-2">
 						{meal.foods.map((food, foodIndex) => (
 							<li key={foodIndex} className="text-gray-700">
-								<span className="font-semibold">{food.name}</span>:{" "}
-								{food.unitCalories * (food.desiredAmount / food.unitAmount)} calories,{" "}
-								{food.unitCarbs * (food.desiredAmount / food.unitAmount)}g carbs,{" "}
-								{food.unitFats * (food.desiredAmount / food.unitAmount)}g fats,{" "}
-								{food.unitProtein * (food.desiredAmount / food.unitAmount)}g protein
+								<span className="font-semibold">{food.name} {food.descriptor} | {food.desiredAmount.toFixed(2)} {food.unit}</span>:{" "}
+								{Math.trunc(food.unitCalories * (food.desiredAmount / food.unitAmount))} calories,{" "}
+								{Math.trunc(food.unitCarbs * (food.desiredAmount / food.unitAmount))}g carbs,{" "}
+								{Math.trunc(food.unitFats * (food.desiredAmount / food.unitAmount))}g fats,{" "}
+								{Math.trunc(food.unitProtein * (food.desiredAmount / food.unitAmount))}g protein
 							</li>
 						))}
 					</ul>

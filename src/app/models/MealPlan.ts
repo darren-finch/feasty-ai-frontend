@@ -1,6 +1,6 @@
-import { Meal } from "./Meal"
+import Meal from "./Meal"
 
-export interface MealPlan {
+export default interface MealPlan {
 	totalActualCalories: number
 	totalActualCarbs: number
 	totalActualFats: number

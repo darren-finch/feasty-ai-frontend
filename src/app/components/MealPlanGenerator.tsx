@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import MealPlanComponent from "./MealPlanComponent"
-import { MealPlan } from "./MealPlan"
+import { MealPlan } from "../models/MealPlan"
 
 const MealPlanGenerator = () => {
 	// State to hold the form values

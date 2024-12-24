@@ -1,5 +1,6 @@
-export interface Food {
+export default interface Food {
 	name: string
+	descriptor?: string
 	unitCalories: number
 	unitCarbs: number
 	unitFats: number

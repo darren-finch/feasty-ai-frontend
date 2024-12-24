@@ -1,7 +1,8 @@
-import MealPlanGenerator from "./MealPlanGenerator"
+"use client";
+import Welcome from "./welcome/page";
 
 const Page = () => {
-	return <MealPlanGenerator />
-}
+    return <Welcome />;
+};
 
-export default Page
+export default Page;

@@ -1,6 +1,6 @@
-import { Food } from "./Food"
+import Food from "./Food"
 
-export interface Meal {
+export default interface Meal {
 	name: string
 	totalCalories: number
 	totalCarbs: number

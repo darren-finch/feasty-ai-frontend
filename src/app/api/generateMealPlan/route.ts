@@ -3,9 +3,9 @@ import { NextResponse } from "next/server"
 interface MealPlanRequestBody {
 	budget: number
 	calories: number
-	carbs: number
-	fats: number
-	protein: number
+	carbPercentage: number
+	fatPercentage: number
+	proteinPercentage: number
 	meals: number
 }
 
@@ -14,8 +14,9 @@ interface MealPlanResponse {
 }
 
 export async function POST(req: Request) {
-	const { budget, calories, carbs, fats, protein, meals } = (await req.json()) as MealPlanRequestBody
-	console.log("Client Route", budget, calories, carbs, fats, protein, meals)
+	const { budget, calories, carbPercentage, fatPercentage, proteinPercentage, meals } =
+		(await req.json()) as MealPlanRequestBody
+	console.log("Client Route", budget, calories, carbPercentage, fatPercentage, proteinPercentage, meals)
 
 	try {
 		const functionUrl = process.env.FIREBASE_FUNCTIONS_BASE_URL + "/generateMealPlan"
@@ -27,9 +28,9 @@ export async function POST(req: Request) {
 			body: JSON.stringify({
 				budget,
 				calories,
-				carbs,
-				fats,
-				protein,
+				carbPercentage,
+				fatPercentage,
+				proteinPercentage,
 				meals,
 			}),
 		})

@@ -1,15 +1,8 @@
 "use client"
-import { useUser } from "@auth0/nextjs-auth0/client"
-import Welcome from "./welcome/page"
-import MealPlan from "./meal-plan/page"
+import Loading from "./components/Loading"
 
 const Page = () => {
-	const { user } = useUser()
-	if (!user) {
-		return <Welcome />
-	} else {
-		return <MealPlan />
-	}
+    return <Loading />
 }
 
 export default Page

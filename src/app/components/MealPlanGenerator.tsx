@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react"
 import MealPlanComponent from "./MealPlanComponent"
-import { MealPlan } from "../models/MealPlan"
+import { MealPlan } from "../../lib/models/MealPlan"
 
 const MealPlanGenerator = () => {
 	// State to hold the form values
@@ -137,9 +137,8 @@ const MealPlanGenerator = () => {
 
 					<button
 						type="submit"
-						className={`w-full py-2 px-4 rounded-lg text-white font-semibold ${
-							loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
-						} focus:outline-none focus:ring-2 focus:ring-blue-500`}
+						className={`w-full py-2 px-4 rounded-lg text-white font-semibold ${loading ? "bg-gray-400" : "bg-blue-600 hover:bg-blue-700"
+							} focus:outline-none focus:ring-2 focus:ring-blue-500`}
 						disabled={loading}>
 						{loading ? "Generating..." : "Generate Meal Plan"}
 					</button>

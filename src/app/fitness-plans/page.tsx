@@ -60,9 +60,8 @@ const FitnessPlans = () => {
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`border rounded-lg p-4 ${
-                  selectedPlan === plan.title ? "border-green-500" : "border-gray-300"
-                } cursor-pointer hover:border-green-500 transition`}
+                className={`border rounded-lg p-4 ${selectedPlan === plan.title ? "border-green-500" : "border-gray-300"
+                  } cursor-pointer hover:border-green-500 transition`}
                 onClick={() => setSelectedPlan(plan.title)}
               >
                 <div className="flex items-center justify-between">
@@ -88,11 +87,10 @@ const FitnessPlans = () => {
 
           {/* Continue Button */}
           <button
-            className={`w-full mt-6 py-2 px-4 rounded-lg shadow-md ${
-              selectedPlan
+            className={`w-full mt-6 py-2 px-4 rounded-lg shadow-md ${selectedPlan
                 ? "bg-green-500 text-white hover:bg-green-600"
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
-            } transition`}
+              } transition`}
             disabled={!selectedPlan}
             onClick={() => {
               if (selectedPlan) {

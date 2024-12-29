@@ -1,5 +1,5 @@
 import React from "react"
-import { MealPlan } from "../models/MealPlan"
+import { MealPlan } from "../../lib/models/MealPlan"
 
 interface MealPlanProps {
 	mealPlan: MealPlan
